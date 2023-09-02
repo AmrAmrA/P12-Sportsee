@@ -9,7 +9,7 @@ import bodyBuilding from "./assets/bodyBuilding.png";
 export default function Header() {
   return (
     <>
-    <nav className="navigation">
+    <nav className="navigationHorizontal">
       <ul className="navigation__list">
         <li className="navigation__list__item">
           <img src= {logo} alt="Sportsee logo" 
@@ -23,21 +23,21 @@ export default function Header() {
       </ul>
     </nav>
 
-    <nav className="navigationTwo">
-      <ul className="navigationTwo__list">
-        <li className="navigationTwo__list__item"><img src={meditation} alt="
+    <nav className="navigationVertical">
+      <ul className="navigationVertical__list">
+        <li className="navigationVertical__list__item"><img src={meditation} alt="
 A character meditating" /></li>
-        <li className="navigationTwo__list__item">
+        <li className="navigationVertical__list__item">
           <img src= {swimming} alt="A character swimming" />
         </li>
-        <li className="navigationTwo__list__item">
+        <li className="navigationVertical__list__item">
           <img src= {cycling} alt="A character Cycling" />
         </li>
-        <li className="navigationTwo__list__item">
+        <li className="navigationVertical__list__item">
           <img src={bodyBuilding} alt="A red dumbell" />
         </li>
       </ul>
-        <p className="navigationTwo__list__Text">Copyright, SportSee 2023</p>
+        <p className="navigationVertical__list__Text">Copyright, SportSee 2023</p>
     </nav>
     </>
 
