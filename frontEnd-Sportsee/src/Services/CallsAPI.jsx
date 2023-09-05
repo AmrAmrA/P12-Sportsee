@@ -1,7 +1,20 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 
-export default function CallsAPI() {
-   const communicationActivity =  fetch("http://localhost:3000/user/18").then((response) => response.json()).then((data) => console.log(data));
-   const communicationSessions = fetch("http://localhost:3000/user/18/average-sessions").then((response) => response.json());
- 
-}
+export default async function CallsAPI (Id) {
+    const endpoint = `http://localhost:3000/user/${Id}`;
+  
+    try {
+      const response = await fetch(endpoint);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      if (!data) return null
+      console.log("Data received from API:", data);
+      return data;
+    } catch (error) {
+      console.error("Fetch error: ", error);
+      throw error;
+    }
+  }
