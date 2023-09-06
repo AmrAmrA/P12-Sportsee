@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
-import "./__visitChoices.scss";
+import styles from "./__visitChoices.module.scss";
 import { Link } from "react-router-dom";
 
 function PathButton({ direction, userNumber }) {
   return (
     <Link to={direction}>
-      <button>
-        <span className="button__span">{userNumber}</span>
+      <button className={styles.button}>
+        <span className={styles.button__span}>{userNumber}</span>
       </button>
     </Link>
   );
@@ -16,11 +16,11 @@ function PathButton({ direction, userNumber }) {
 
 export default function VisitChoices() {
   return (
-    <main>
-      <h1 className="title">
-        Bonjour <span className="title__span"> Visiteur</span>
+    <main className= {styles.main__choices}>
+      <h1 className={styles.title}>
+        Bonjour <span className={styles.title__span}> Visiteur</span>
       </h1>
-      <p className="paragraph__choice">
+      <p className={styles.paragph__choice}>
         Quel profil souhaitez-vous sélectionner ?
       </p>    
         <PathButton direction="/user/12" userNumber="Utilisateur 12" />

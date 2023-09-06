@@ -1,0 +1,26 @@
+.navigation__list {
+    display: flex;
+    align-items: center;
+    gap: 85px;
+    background-color: #020203;
+    height: 90px;
+    justify-content: space-around;
+  
+    &__logo {
+      width: 177px;
+      height: 60px;
+    }
+  
+    &__item {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #ffffff;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+  
+      &:hover {
+        color: #ff6060;}
+    }
+  }

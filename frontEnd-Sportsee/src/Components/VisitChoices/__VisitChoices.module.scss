@@ -1,4 +1,4 @@
-main {
+.main__choices {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -20,7 +20,7 @@ main {
     font-weight: 400;
 }
 
-button {
+.button {
     width: 200px;
     height: 50px;
     border: none;
