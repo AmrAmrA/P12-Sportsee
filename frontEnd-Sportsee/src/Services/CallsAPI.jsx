@@ -1,4 +1,21 @@
 /* eslint-disable no-unused-vars */
+// import React, { useState, useEffect } from "react";
+
+// export default function CallsAPI(Id) {
+//   const endpoint = `http://localhost:3000/user/${Id}`;
+
+//   const [userData, setUserData] = useState({});
+
+//   useEffect(() => {
+//     fetch(endpoint)
+//       .then((res) => res.json())
+//       .then((res) => {
+//         setUserData(res);
+//       });
+//   }, [Id]);
+//   return { userData }
+// }
+
 import React from 'react'
 
 export default async function CallsAPI (Id) {
@@ -11,7 +28,6 @@ export default async function CallsAPI (Id) {
       }
       const data = await response.json();
       if (!data) return null
-      console.log("Data received from API:", data);
       return data;
     } catch (error) {
       console.error("Fetch error: ", error);
