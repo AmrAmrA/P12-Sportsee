@@ -1,0 +1,52 @@
+.keyDataBox{
+    background-color: #fbfbfb;
+    width: 220px;
+    height: 110px;
+    // box-shadow: 0px 2px 4px 0px #000000;
+    padding: 20px 20px;
+    &__calories{
+        display: flex;
+        gap: 20px;
+        &__icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+            &__value {
+                color: #282D30;
+                font-weight: 900;
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+
+            &__title {
+                color: #74798C;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+.caloriesBox {
+    grid-column: 4/4;
+    grid-row: 1/1;
+}
+.proteinsBox {
+    grid-column: 4/4;
+    grid-row: 2/2;
+}
+.carboBox{
+    grid-column: 4/4;
+    grid-row: 3/3;
+}
+.lipidsBox {
+    grid-column: 4/4;
+    grid-row: 4/4;
+}
