@@ -40,6 +40,25 @@ export default function DailySessions() {
   for (let i = 0; i < dataArrayApi.length; i++) {
     dataArrayApi[i].day = dayNumber[i];
   }
+  console.log(dataArrayApi);
+  const getIntroOfPage = (label) => {
+    return "";
+  };
+  
+  
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip__bar">
+          <p className="intro">{getIntroOfPage(label)}</p>
+          <p> {dataArrayApi[label - 1].kilogram}kg</p>
+           <p> {dataArrayApi[label - 1].calories}kcal</p>
+        </div>
+      );
+    }
+  
+    return null;
+  };
 
   return (
     <div className="charts">
@@ -58,6 +77,7 @@ export default function DailySessions() {
             dataKey="day"
             interval={0}
             strokeDasharray="0 10"
+            tick={{ fill: '#9B9EAC', opacity: '0.5', dy: 10,}}
           ></XAxis>
           <YAxis
             dataKey="calories"
@@ -65,8 +85,12 @@ export default function DailySessions() {
             padding={{ top: 70 }}
             strokeDasharray="0 1"
             tickCount={4}
+            tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}}
+            style={{
+              fontSize: '16',
+          }}
           />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />}/>
           <Legend
             verticalAlign="top"
             height={50}

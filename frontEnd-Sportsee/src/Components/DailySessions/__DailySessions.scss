@@ -2,8 +2,25 @@
     grid-column: 1/4;
     grid-row: 1/4;
     background-color: #FBFBFB;
+    padding: 16px 0px;
 }
 
 .recharts-legend-item-text {
-    color: #74798C; 
+    color: #0033ff; 
+}
+.intro {
+    background-color: red;
+}
+.custom-tooltip__bar {
+    background-color: red;
+    color: #ffff;
+    height: 110px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 10px ;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 500;
 }
