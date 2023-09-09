@@ -40,10 +40,10 @@ export default function DailySessions() {
   for (let i = 0; i < dataArrayApi.length; i++) {
     dataArrayApi[i].day = dayNumber[i];
   }
-  console.log(dataArrayApi);
   const getIntroOfPage = (label) => {
     return "";
   };
+  
   
   
   const CustomTooltip = ({ active, payload, label }) => {
@@ -84,7 +84,7 @@ export default function DailySessions() {
             orientation="right"
             padding={{ top: 70 }}
             strokeDasharray="0 1"
-            tickCount={4}
+            tickCount={5}
             tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}}
             style={{
               fontSize: '16',

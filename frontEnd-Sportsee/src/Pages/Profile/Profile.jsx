@@ -1,7 +1,8 @@
-import Header from "../../Components/Header/Header";
 import styles from "./__Profile.module.scss";
-import Greetings from "../../Components/Greetings/Greetings";
+import Header from "../../Components/Header/Header";
 import KeysData from "../../Components/KeysData/KeysData";
+import Greetings from "../../Components/Greetings/Greetings";
+import AverageScore from "../../Components/AverageScore/AverageScore";
 import DailySessions from "../../Components/DailySessions/DailySessions";
 import AverageSessions from "../../Components/AverageSessions/AverageSessions";
 
@@ -12,7 +13,12 @@ function MyComponent() {
           <DailySessions/>
           <KeysData/>
         </div>
-          <AverageSessions/>
+        <div className={styles.wraper__stats}>  
+
+        <AverageSessions/>
+          <AverageScore/>
+        </div>
+   
       </main>
   );
 }

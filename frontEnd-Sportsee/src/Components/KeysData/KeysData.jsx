@@ -37,7 +37,6 @@ myArray.push(
 );
 let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
 
-
   return (
     <>
       <div className={`${styles.keyDataBox }  ${styles.caloriesBox}`}  >

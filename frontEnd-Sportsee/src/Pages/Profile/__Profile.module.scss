@@ -8,3 +8,8 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
+.wraper__stats {
+    margin-top: -100px;
+    display: flex;
+    gap: 10px;
+}
