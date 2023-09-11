@@ -50,13 +50,13 @@ export default function AverageSessions() {
   }
 
   const labelToIndexMap = {
-    L: 0,
-    M: 1,
+    "L": 0,
+    "M": 1,
     " M ": 2,
-    J: 3,
-    V: 4,
-    S: 5,
-    D: 6,
+    "J": 3,
+    "V": 4,
+    "S": 5,
+    "D": 6,
   };
   const getIntroOfPage = (label) => {
     const index = labelToIndexMap[label];
@@ -77,6 +77,7 @@ export default function AverageSessions() {
   };
   return (
     <div className="Line__charts">
+      <p className="sessionss__time">Durée moyenne des sessions</p>
       <ResponsiveContainer>
         <LineChart
         

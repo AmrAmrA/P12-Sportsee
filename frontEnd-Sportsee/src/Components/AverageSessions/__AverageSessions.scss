@@ -4,6 +4,7 @@
     background-color: #FF0000;
     display: inline-block;
     border-radius: 5px;
+    padding: 20px 0px 20px 0px;
 }
 
 .custom__tooltip__char {
@@ -18,4 +19,14 @@
 
 .recharts-cartesian-axis-tick-line {
     display: none;
+}
+
+.sessionss__time {
+    padding-left: 30px;
+    text-align: left;
+    line-height: 1.2;
+    width: 200px;
+    color: #eddfdf;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
 }
