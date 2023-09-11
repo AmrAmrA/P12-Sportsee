@@ -106,7 +106,7 @@ export default function AverageSessions() {
             type="monotone"
             dataKey="sessionLength"
             stroke="#FFFFFF"
-            name=" "
+            name=""
           />
         </LineChart>
       </ResponsiveContainer>

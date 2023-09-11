@@ -48,36 +48,46 @@ export default function AverageScore() {
   }, [userId]); // Ajouter userId à la liste de dépendances
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  return (
-    <RadialBarChart
+
+  let objectScore = [{
+   "score": `${data.data.todayScore ? data.data.todayScore : data.data.score}`, 
+    "fill" : "red", 
+    "uv": 26.69,
+    "pv": 4567, 
+  }
+]
+ let scoreFormatted = objectScore[0].score 
+ return (
+   <>
+   <div className="centralCircle">
+    <p className="scoreInsideCirlce">{scoreFormatted * 100}%</p>
+    <p className="objectifInsideCircle"> de votre <br /> objectif  </p>
+   </div>
+   <p className="score__absolute">Score</p>
+      <RadialBarChart
       width={250}
       height={260}
       cx={130}
-      cy={110}
+      cy={130}
       innerRadius={80}
       outerRadius={80}
-      startAngle={12 * 18}
-      endAngle={90}
+      startAngle={80}
+      endAngle={210}
       barSize={10}
-      data={dataTest}
+      clockWise
+      data={objectScore}
       className="TextInside"
     >
       <RadialBar
         minAngle={15}
-        label={{ position: "insideStart", fill: "#fff" }}
+        label={{ position: "insideStart", fill: "green" }}
         background
         clockWise
         dataKey="uv"
-        fill="red"
+        fill="green"
       />
-      {/* <Legend
-        iconSize={10}
-        width={120}
-        height={140}
-        layout="vertical"
-        verticalAlign="middle"
-        content= "Score"
-      /> */}
     </RadialBarChart>
+     
+     </>
   );
 }

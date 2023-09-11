@@ -1,3 +1,42 @@
 .TextInside {
     background-color: #FBFBFB;
 }
+
+.paragraph__score {
+    font-size: 16px;
+}
+.score__absolute {
+    position: absolute;
+    left: 450px;
+    z-index: 3;
+    font-weight: 900; 
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 18px;
+}
+
+.centralCircle {
+    background-color: #ffffff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    left: 465px;
+    margin-top: 55px;
+    z-index: 3;
+}
+.scoreInsideCirlce{
+        text-align: center;
+        margin-top: 40px;
+        color: #282D30;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 24px;
+}
+.objectifInsideCircle {
+    text-align: center;
+    line-height: 25px;
+    color: #74798C;
+    font-size: 19px;
+    font-weight: 900;
+}
