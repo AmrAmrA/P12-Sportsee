@@ -17,8 +17,8 @@ function MyComponent() {
         <div className={styles.wraper__stats}>  
 
         <AverageSessions/>
-          <AverageScore/>
           <TypeActivities/>
+          <AverageScore/>
         </div>
    
       </main>

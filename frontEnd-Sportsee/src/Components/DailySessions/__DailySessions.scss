@@ -4,6 +4,7 @@
     background-color: #FBFBFB;
     padding: 16px 0px;
     height: 280px;
+    position: relative;
 }
 
 .recharts-legend-item-text {
@@ -21,4 +22,12 @@
     padding: 10px ;
     font-family: 'Roboto', 'sans-serif';
     font-weight: 500;
+}
+.DailyActivity {
+    position: absolute;
+    top: 20px;
+    margin-left: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
 }

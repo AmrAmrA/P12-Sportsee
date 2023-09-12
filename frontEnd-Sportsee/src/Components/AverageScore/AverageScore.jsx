@@ -65,9 +65,9 @@ export default function AverageScore() {
    </div>
    <p className="score__absolute">Score</p>
       <RadialBarChart
-      width={250}
-      height={260}
-      cx={130}
+      width={205}
+      height={240}
+      cx={100}
       cy={130}
       innerRadius={80}
       outerRadius={80}

@@ -62,6 +62,7 @@ export default function DailySessions() {
 
   return (
     <div className="charts">
+      <p className="DailyActivity">Activité quotidenne</p>
       <ResponsiveContainer>
         <BarChart
           data={dataArrayApi}
