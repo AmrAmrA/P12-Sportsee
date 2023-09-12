@@ -4,6 +4,7 @@ import KeysData from "../../Components/KeysData/KeysData";
 import Greetings from "../../Components/Greetings/Greetings";
 import AverageScore from "../../Components/AverageScore/AverageScore";
 import DailySessions from "../../Components/DailySessions/DailySessions";
+import TypeActivities from "../../Components/TypeActivities/TypeActivities";
 import AverageSessions from "../../Components/AverageSessions/AverageSessions";
 
 function MyComponent() {
@@ -17,6 +18,7 @@ function MyComponent() {
 
         <AverageSessions/>
           <AverageScore/>
+          <TypeActivities/>
         </div>
    
       </main>

@@ -52,8 +52,8 @@ export default function AverageScore() {
   let objectScore = [{
    "score": `${data.data.todayScore ? data.data.todayScore : data.data.score}`, 
     "fill" : "red", 
-    "uv": 26.69,
-    "pv": 4567, 
+    "uv": 2,
+    "pv": 1, 
   }
 ]
  let scoreFormatted = objectScore[0].score 
@@ -80,11 +80,13 @@ export default function AverageScore() {
     >
       <RadialBar
         minAngle={15}
-        label={{ position: "insideStart", fill: "green" }}
+        label={{ position: "insideStart", fill: "red" }}
         background
+        width={0}
+        height={0}
         clockWise
-        dataKey="uv"
-        fill="green"
+        dataKey="pv"
+        fill="red"
       />
     </RadialBarChart>
      

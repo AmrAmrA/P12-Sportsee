@@ -60,7 +60,6 @@ export default function AverageSessions() {
   };
   const getIntroOfPage = (label) => {
     const index = labelToIndexMap[label];
-    console.log(<LineChart/>);
     
     return index !== undefined ? `${emptyArray[index]}` : "";
   };

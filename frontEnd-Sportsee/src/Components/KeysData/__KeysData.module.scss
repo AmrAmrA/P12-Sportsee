@@ -1,15 +1,16 @@
 .keyDataBox{
     background-color: #fbfbfb;
-    width: 220px;
+    width: 180px;
     height: 110px;
+    margin-bottom: 35px;
     // box-shadow: 0px 2px 4px 0px #000000;
     padding: 20px 20px;
     &__calories{
         display: flex;
         gap: 20px;
         &__icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
         }
 
         &__text{
@@ -20,7 +21,7 @@
             &__value {
                 color: #282D30;
                 font-weight: 900;
-                font-size: 20px;
+                font-size: 18px;
                 line-height: 24px;
             }
 
@@ -35,18 +36,18 @@
     }
 }
 .caloriesBox {
-    grid-column: 4/4;
+    grid-column: 5/5;
     grid-row: 1/1;
 }
 .proteinsBox {
-    grid-column: 4/4;
+    grid-column: 5/5;
     grid-row: 2/2;
 }
 .carboBox{
-    grid-column: 4/4;
+    grid-column: 5/5;
     grid-row: 3/3;
 }
 .lipidsBox {
-    grid-column: 4/4;
+    grid-column: 5/5;
     grid-row: 4/4;
 }
