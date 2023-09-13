@@ -2,7 +2,7 @@
 ----------------------------------------------------------
 
 _Description_  
-SportSee est une startup dédiée au coaching sportif.   En pleine croissance, a lancé une nouvelle version de la page profil de l’utilisateur.   Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
+SportSee est une startup dédiée au coaching sportif.   En pleine croissance, SportSee a lancé une nouvelle version de la page profil de l’utilisateur.   Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
 
 ------------------------------------------------
 _Mission_  
@@ -13,7 +13,7 @@ Je devais réaliser la partie frontend de l'application Sportsee. Il fallait que
 __Charte Graphique__   
 
 Polices   
-Texte et titres         : Roboto  
+Texte et titres  : Roboto  
 
 __Couleurs__  
 Primaire    : ##FF0101  
@@ -27,7 +27,7 @@ Tertiaire   :  #fbfbfb
 __Technologies__  
 
 * Le développement devait se faire avec React et la librairie Recharts. 
-* L'utilisattion et des CSS modules relevait d'une initiative personnelle. 
+* L'utilisattion du SCSS et des CSS modules relevait d'une initiative personnelle. 
 * Tout le code doit être versionné sur GitHub.
 
 --------------------------------------------------------------------------  
