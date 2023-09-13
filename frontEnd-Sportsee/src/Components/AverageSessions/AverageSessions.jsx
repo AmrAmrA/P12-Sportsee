@@ -2,22 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CallAverageSessions from "../../Services/AverageSessionsAPI";
 import AveragesSessionsStyle from "./__AverageSessions.scss";
-import {
-  BarChart,
-  LineChart,
-  Bar,
-  Cell,
-  XAxis,
-  Label,
-  Line,
-  Text,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  CartesianAxis,
-} from "recharts";
+import {LineChart,Cell,XAxis,Line,YAxis,CartesianGrid,Tooltip,Legend,ResponsiveContainer} from "recharts";
 
 export default function AverageSessions() {
   const [data, setData] = useState({});

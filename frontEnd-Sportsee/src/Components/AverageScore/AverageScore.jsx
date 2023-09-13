@@ -1,33 +1,10 @@
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AverageScoreStyle from "./__AverageScore.scss";
 import CallsApi from "../../Services/CallsAPI";
-import {
-  BarChart,
-  LineChart,
-  Bar,
-  Cell,
-  XAxis,
-  Label,
-  Line,
-  Text,
-  YAxis, 
-  CartesianGrid,
-  RadialBarChart,
-  RadialBar,
-  PolarAngleAxis,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  CartesianAxis,
-} from "recharts";
+import {RadialBarChart,RadialBar} from "recharts";
 
-const dataTest = [
-  {
-
-  },
-
-];
 export default function AverageScore() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);

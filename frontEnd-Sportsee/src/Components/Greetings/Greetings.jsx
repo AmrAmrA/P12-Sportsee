@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./__Greetings.module.scss";
 import CallsApi from "../../Services/CallsAPI";
 import { useParams } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function Greetings() {
   }, [userId]); // Ajouter userId à la liste de dépendances
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  let firstName = data.data.userInfos.firstName;
+  const firstName = data.data.userInfos.firstName;
   return (
     <div className={styles.greetings}>
       <p className={styles.greetings__hello}>

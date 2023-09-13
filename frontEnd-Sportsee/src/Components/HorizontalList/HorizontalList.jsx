@@ -7,11 +7,7 @@ export default function HorizontalList() {
     <nav>
       <ul className={styles.navigation__list}>
         <li className={styles.navigation__list__item}>
-          <img
-            src={logo}
-            alt="Sportsee logo"
-            className={styles.navigation__list__logo}
-          />
+          <img src={logo} alt="Sportsee logo" className={styles.navigation__list__logo}/>
         </li>
         <li className={styles.navigation__list__item}>Accueil </li>
         <li className={styles.navigation__list__item}>Profil</li>
