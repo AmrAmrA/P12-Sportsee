@@ -19,6 +19,14 @@
 import React from 'react'
 
 export default async function CallsAPI (Id) {
+    const isDataMocked = false;
+
+    if(isDataMocked){
+      // fait appel aux datas mockées, toujours en fonction de l'id bien évidemment
+    } else {
+      // data de l'api
+    }
+
     const endpoint = `http://localhost:3000/user/${Id}`;
   
     try {

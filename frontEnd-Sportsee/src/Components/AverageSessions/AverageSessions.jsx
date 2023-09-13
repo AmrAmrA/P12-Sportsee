@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import { useParams } from "react-router-dom";
 import CallAverageSessions from "../../Services/AverageSessionsAPI";
 import AveragesSessionsStyle from "./__AverageSessions.scss";
@@ -65,6 +66,10 @@ export default function AverageSessions() {
 
     return null;
   };
+
+  CustomTooltip.propTypes = {
+    label : PropTypes.string
+  }
   return (
     <div className="Line__charts">
       <p className="sessionss__time">Durée moyenne des sessions</p>

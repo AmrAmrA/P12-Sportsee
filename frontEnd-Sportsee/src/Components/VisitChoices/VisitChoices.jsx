@@ -1,5 +1,6 @@
 import styles from "./__visitChoices.module.scss";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 /**
  * A function to use the React router DOM with Props to To adapt to the different urls and different Name of each selected user 
  * @param {*String} direction
@@ -14,6 +15,10 @@ function PathButton({ direction, userNumber }) {
     </Link>
   );
 }
+PathButton.propTypes = {
+  direction : PropTypes.string,
+  userNumber : PropTypes.string
+}
 
 export default function VisitChoices() {
   return (
@@ -22,7 +27,6 @@ export default function VisitChoices() {
       <p className={styles.paragph__choice}>Quel profil souhaitez-vous sélectionner ?</p>    
         <PathButton direction="/user/12" userNumber="Utilisateur 12" />
         <PathButton direction="/user/18" userNumber="Utilisateur 18" />
-        <PathButton direction="/user/Mock" userNumber="Utilisateur Mock" />
     </main>
   );
 }

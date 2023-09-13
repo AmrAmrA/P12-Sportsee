@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DailySessionsStyle from "./__DailySessions.scss"; 
 import ActivityAPI from "../../Services/ActivityAPI";
+import PropTypes from 'prop-types'
 import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend,ResponsiveContainer} from "recharts";
 export default function DailySessions() {
   const [data, setData] = useState(undefined);
@@ -20,6 +21,8 @@ export default function DailySessions() {
   }, [userId]); 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
+
+
   
   // Operation to format dates and switch from a days/months/years format to a format that gives the date according to its index in the data Array. 
   const dataArrayApi = [...data.data.sessions];
@@ -28,8 +31,8 @@ export default function DailySessions() {
 
   /**
    * When you hover over the daily activity graph, a customized window with a red background appears, displaying daily weight and calories burned 
-   * @param {*boolean} payload, 
-   * @param {*boolean} label, 
+   * @param {*array} payload, 
+   * @param {*string} label, 
    * @returns daily weight and calories burned for every day of the week
    */
   const CustomTooltip = ({  payload, label }) => {
@@ -42,6 +45,10 @@ export default function DailySessions() {
       );
     }
   };
+  CustomTooltip.propTypes = {
+    payload : PropTypes.array,
+    label : PropTypes.string
+  }
 
   return (
     <div className="charts">
@@ -53,7 +60,7 @@ export default function DailySessions() {
           <CartesianGrid stroke="#DEDEDE" strokeDasharray="2 2" vertical = {false} />
           <XAxis dataKey="day" interval={0} strokeDasharray="0 10" tick={{ fill: '#9B9EAC', opacity: '0.5', dy: 10,}}
           ></XAxis>
-          <YAxis dataKey="calories" orientation="right" padding={{ top: 70 }} strokeDasharray="0 1" tickCount={200} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}} style={{fontSize: '16',}}
+          <YAxis dataKey="calories" orientation="right" padding={{ top: 70 }} strokeDasharray="0 1" tickCount={200} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}}  style={{fontSize: '16',}}
           />
           <Tooltip content={<CustomTooltip />}/>
           <Legend verticalAlign="top" height={50} iconType="circle" iconSize={8} align="right"/>
