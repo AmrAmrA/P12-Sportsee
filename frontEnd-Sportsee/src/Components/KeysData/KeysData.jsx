@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./__KeysData.module.scss";
-import caloriesIcon from "./assets/caloriesIcon.png";
-import proteinesIcon from "./assets/proteinsIcon.png";
+import CallsApi from "../../Services/CallsAPI";
 import carbsIcon from "./assets/carbsIcon.png";
 import lipidsIcon from "./assets/lipidsIcon.png";
-import { useParams } from "react-router-dom";
-import CallsApi from "../../Services/CallsAPI";
+import caloriesIcon from "./assets/caloriesIcon.png";
+import proteinesIcon from "./assets/proteinsIcon.png";
 
 export default function KeysData() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useParams();
-
+    /** 
+   * Call API to gather all Users Data from CallsAPI and if it fails we have an error handling system
+   */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,10 +26,10 @@ export default function KeysData() {
       setLoading(false);
     };
     fetchData();
-  }, [userId]); // Ajouter userId à la liste de dépendances
+  }, [userId]); 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>; 
-// Destruction de l'objet KeyData
+// Destructuring keyData Object
 const myArray = [];
 myArray.push(
   data.data.keyData.calorieCount,
@@ -36,7 +38,7 @@ myArray.push(
   data.data.keyData.lipidCount
 );
 let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
-
+  // Displays the number of Calories, proteins, Carbs and lipids
   return (
     <>
       <div className={`${styles.keyDataBox }  ${styles.caloriesBox}`}  >

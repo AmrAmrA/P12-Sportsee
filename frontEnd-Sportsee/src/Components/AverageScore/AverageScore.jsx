@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AverageScoreStyle from "./__AverageScore.scss";
 import CallsApi from "../../Services/CallsAPI";
@@ -10,7 +10,9 @@ export default function AverageScore() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useParams();
-
+  /** 
+   * Call API to gather all Users Data from CallsApi and if it fails we have an error handling system
+   */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,6 +29,7 @@ export default function AverageScore() {
   if (error) return <div>Error: {error}</div>;
 
   let objectScore = [{
+    // I have to use a ternary because inside our API DATA, some users have the key "score" and other ones have the key "todayScore"
    "score": `${data.data.todayScore ? data.data.todayScore : data.data.score}`, 
     "fill" : "red", 
     "uv": 2,
@@ -49,7 +52,7 @@ export default function AverageScore() {
       innerRadius={80}
       outerRadius={80}
       startAngle={80}
-      endAngle={210}
+      endAngle={150}
       barSize={10}
       clockWise
       data={objectScore}

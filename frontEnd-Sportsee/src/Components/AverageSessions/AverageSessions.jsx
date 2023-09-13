@@ -9,7 +9,9 @@ export default function AverageSessions() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useParams();
-
+     /** 
+   * Call API to gather all Users Data from TypesActivitiesPerformances and if it fails we have an error handling system
+   */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,17 +23,19 @@ export default function AverageSessions() {
       setLoading(false);
     };
     fetchData();
-  }, [userId]); // Ajouter userId à la liste de dépendances
+  }, [userId]);
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
+  // I replace the array of days of the week with another array of their abbreviations
   const copyArray = [...data.data.sessions];
   const daysWithLetters = ["L", "M", " M ", "J", "V", "S", "D"];
   for (let i = 0; i < copyArray.length; i++) {
     copyArray[i].day = daysWithLetters[i];
   }
-  let emptyArray = [];
+  // I need to extract the array of every session length because i will display with my customToolTip
+  const durationArray = [];
   for (let i = 0; i < data.data.sessions.length; i++) {
-    emptyArray.push(data.data.sessions[i].sessionLength);
+    durationArray.push(data.data.sessions[i].sessionLength);
   }
 
   const labelToIndexMap = {
@@ -43,11 +47,13 @@ export default function AverageSessions() {
     "S": 5,
     "D": 6,
   };
+  // A function with a ternary condition
+  // If while i hoover my index exists, return me the sessions length, Else don't return anything
   const getIntroOfPage = (label) => {
     const index = labelToIndexMap[label];
-    
-    return index !== undefined ? `${emptyArray[index]}` : "";
+    return index !== undefined ? `${durationArray[index]}` : "";
   };
+  // The custom Tooltip with my own style and data who appears when we hoover the Red LineChart
   const CustomTooltip = ({ label }) => {
     if (label) {
       return (

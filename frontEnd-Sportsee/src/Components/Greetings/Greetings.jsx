@@ -20,7 +20,7 @@ export default function Greetings() {
       setLoading(false);
     };
     fetchData();
-  }, [userId]); // Ajouter userId à la liste de dépendances
+  }, [userId]); 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   const firstName = data.data.userInfos.firstName;

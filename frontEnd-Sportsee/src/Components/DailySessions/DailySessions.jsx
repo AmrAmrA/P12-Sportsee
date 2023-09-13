@@ -8,44 +8,39 @@ export default function DailySessions() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useParams();
-
+  /** 
+   * Call API to gather all Users Data from ActivityAPI and if it fails we have an error handling system
+   */
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const result = await ActivityAPI(userId);
-        setData(result);
-      } catch (error) {
-        setError(error);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, [userId]); // Ajouter userId à la liste de dépendances
+      try {const result = await ActivityAPI(userId); setData(result);} 
+      catch (error) {setError(error);}
+      setLoading(false)};
+    fetchData()
+  }, [userId]); 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
+  
+  // Operation to format dates and switch from a days/months/years format to a format that gives the date according to its index in the data Array. 
   const dataArrayApi = [...data.data.sessions];
   const dayNumber = dataArrayApi.map((item) => item.day.slice(-1));
-  for (let i = 0; i < dataArrayApi.length; i++) {
-    dataArrayApi[i].day = dayNumber[i];
-  }
-  const getIntroOfPage = () => {
-    return "";
-  };
-  
-  
-  
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
+  for (let i = 0; i < dataArrayApi.length; i++) {dataArrayApi[i].day = dayNumber[i];}
+
+  /**
+   * When you hover over the daily activity graph, a customized window with a red background appears, displaying daily weight and calories burned 
+   * @param {*boolean} payload, 
+   * @param {*boolean} label, 
+   * @returns daily weight and calories burned for every day of the week
+   */
+  const CustomTooltip = ({  payload, label }) => {
+    if ( label && payload) {
       return (
         <div className="custom-tooltip__bar">
-          <p className="intro">{getIntroOfPage(label)}</p>
           <p> {dataArrayApi[label - 1].kilogram}kg</p>
            <p> {dataArrayApi[label - 1].calories}kcal</p>
         </div>
       );
     }
-  
-    return null;
   };
 
   return (
@@ -58,7 +53,7 @@ export default function DailySessions() {
           <CartesianGrid stroke="#DEDEDE" strokeDasharray="2 2" vertical = {false} />
           <XAxis dataKey="day" interval={0} strokeDasharray="0 10" tick={{ fill: '#9B9EAC', opacity: '0.5', dy: 10,}}
           ></XAxis>
-          <YAxis dataKey="calories" orientation="right" padding={{ top: 70 }} strokeDasharray="0 1" tickCount={5} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}} style={{fontSize: '16',}}
+          <YAxis dataKey="calories" orientation="right" padding={{ top: 70 }} strokeDasharray="0 1" tickCount={200} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}} style={{fontSize: '16',}}
           />
           <Tooltip content={<CustomTooltip />}/>
           <Legend verticalAlign="top" height={50} iconType="circle" iconSize={8} align="right"/>
