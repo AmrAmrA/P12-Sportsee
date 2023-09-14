@@ -41,28 +41,30 @@ export default function TypeActivities() {
   ];
   for (let i = 0; i < ArrayCopy.length; i++) {
     ArrayCopy[i].kind = newArray[i];}
+    console.log(ArrayCopy);
 
   return (
     <div className="wrapperTypeActivities">
       <RadarChart
-        cx={100}
-        cy={130}
-        outerRadius={50}
+        cx={104}
+        cy={120}
+        innerRadius={-12}
+        outerRadius={58}
         width={212}
         height={240}
         data={ArrayCopy}
         fill="black"
       >
-        <PolarGrid stroke="white" fill="black" />
+        <PolarGrid stroke="white" fill="black"/>
         <PolarAngleAxis dataKey="kind" fill="white" stroke="white" />
-        <PolarRadiusAxis fill="black" stroke="black" />
+        <PolarRadiusAxis fill="black" stroke="black"/>
 
         <Radar
-          name="Mike"
           dataKey="value"
           fill="#FF0101B2" 
           fillOpacity={1}
           stroke="#FF0101B2"
+     
         />
       </RadarChart>
     </div>
