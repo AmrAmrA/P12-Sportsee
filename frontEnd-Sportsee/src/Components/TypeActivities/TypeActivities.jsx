@@ -41,8 +41,6 @@ export default function TypeActivities() {
   ];
   for (let i = 0; i < ArrayCopy.length; i++) {
     ArrayCopy[i].kind = newArray[i];}
-    console.log(ArrayCopy);
-
   return (
     <div className="wrapperTypeActivities">
       <RadarChart

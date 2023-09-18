@@ -1,16 +1,32 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import CallAverageSessions from "../../Services/AverageSessionsAPI";
 import AveragesSessionsStyle from "./__AverageSessions.scss";
-import {LineChart,Cell,XAxis,Line,YAxis,CartesianGrid,Tooltip,Legend,ResponsiveContainer} from "recharts";
+import {
+  LineChart,
+  Cell,
+  XAxis,
+  Line,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  Rectangle, 
+  ResponsiveContainer,
+} from "recharts";
+
+
+
+
+
 
 export default function AverageSessions() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { userId } = useParams();
-     /** 
+  /**
    * Call API to gather all Users Data from TypesActivitiesPerformances and if it fails we have an error handling system
    */
   useEffect(() => {
@@ -26,7 +42,7 @@ export default function AverageSessions() {
     fetchData();
   }, [userId]);
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <div>Error: </div>;
   // I replace the array of days of the week with another array of their abbreviations
   const copyArray = [...data.data.sessions];
   const daysWithLetters = ["L", "M", " M ", "J", "V", "S", "D"];
@@ -58,9 +74,9 @@ export default function AverageSessions() {
   const CustomTooltip = ({ label }) => {
     if (label) {
       return (
-        <div className="custom__tooltip__char">
-          <p className="intro__">{getIntroOfPage(label)} min</p>
-        </div>
+          <div className="custom__tooltip__char">
+            <p className="intro__">{getIntroOfPage(label)} min</p>
+          </div>
       );
     }
 
@@ -68,14 +84,18 @@ export default function AverageSessions() {
   };
 
   CustomTooltip.propTypes = {
-    label : PropTypes.string
-  }
+    label: PropTypes.string,
+  };
+
+ const  CustomizedCursor = ({points}) => {
+		return <Rectangle fill="black" opacity={0.3} x={points[1].x - 20 } width={540} height={177} />;}
+  CustomizedCursor.propTypes = {points : PropTypes.array, };
+
   return (
     <div className="Line__charts">
       <p className="sessionss__time">Durée moyenne des sessions</p>
       <ResponsiveContainer>
         <LineChart
-        
           width={7300}
           height={2500}
           data={data.data.sessions}
@@ -94,9 +114,9 @@ export default function AverageSessions() {
             stroke="#FFFFFF"
             opacity="0.7"
           />
-          <YAxis dataKey="sessionLength" width={0} tickCount={30}  />
-          <Tooltip content={<CustomTooltip />} cursor={false} />
-          <Legend iconSize={0}/>
+          <YAxis dataKey="sessionLength" width={0} tickCount={30} />
+          <Tooltip content={<CustomTooltip />} cursor={<CustomizedCursor />}  />
+          <Legend iconSize={0} />
           <Line
             type="monotone"
             dataKey="sessionLength"
@@ -107,5 +127,4 @@ export default function AverageSessions() {
       </ResponsiveContainer>
     </div>
   );
-
 }

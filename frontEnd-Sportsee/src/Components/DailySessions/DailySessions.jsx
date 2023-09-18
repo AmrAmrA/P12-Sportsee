@@ -38,9 +38,11 @@ export default function DailySessions() {
   const CustomTooltip = ({  payload, label }) => {
     if ( label && payload) {
       return (
-        <div className="custom-tooltip__bar">
+        <div className="parentScore">
+                  <div className="custom-tooltip__bar">
           <p> {dataArrayApi[label - 1].kilogram}kg</p>
            <p> {dataArrayApi[label - 1].calories}kcal</p>
+        </div>
         </div>
       );
     }
@@ -60,7 +62,9 @@ export default function DailySessions() {
           <CartesianGrid stroke="#DEDEDE" strokeDasharray="2 2" vertical = {false} />
           <XAxis dataKey="day" interval={0} strokeDasharray="0 10" tick={{ fill: '#9B9EAC', opacity: '0.5', dy: 10,}}
           ></XAxis>
-          <YAxis dataKey="calories" orientation="right" padding={{ top: 70 }} strokeDasharray="0 1" tickCount={200} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}}  style={{fontSize: '16',}}
+          <YAxis 
+          type="number"  domain={[50, 400]} 
+          dataKey="calories" orientation="right"  strokeDasharray="0 2" tickCount={4} tick={{ fill: '#9B9EAC', opacity: '0.5', dx: 20,}}  style={{fontSize: '16',}}
           />
           <Tooltip content={<CustomTooltip />}/>
           <Legend verticalAlign="top" height={50} iconType="circle" iconSize={8} align="right"/>

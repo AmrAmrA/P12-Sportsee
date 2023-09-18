@@ -23,22 +23,24 @@ export default async function CallsAPI (Id) {
 
     if(isDataMocked){
       // fait appel aux datas mockées, toujours en fonction de l'id bien évidemment
+      const endpoint = '../../public/FakeKeysData.json';
+      
     } else {
-      // data de l'api
+      // data de l'api*
+      const endpoint = `http://localhost:3000/user/${Id}`;
+  
+      try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (!data) return null
+        return data;
+      } catch (error) {
+        console.error("Fetch error: ", error);
+        throw error;
+      }
     }
 
-    const endpoint = `http://localhost:3000/user/${Id}`;
-  
-    try {
-      const response = await fetch(endpoint);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      if (!data) return null
-      return data;
-    } catch (error) {
-      console.error("Fetch error: ", error);
-      throw error;
-    }
   }

@@ -6,14 +6,14 @@ import './App.scss'
 function App() {
 
   return (
-    <>
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/user/:userId" element={<Profile />} />
+        <Route path="*" element={<Homepage />} />
       </Routes>
     </Router>
-    </>
+
   )
 }
 
