@@ -1,10 +1,12 @@
 import styles from "./__Profile.module.scss";
+import { useParams } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import KeysData from "../../Components/KeysData/KeysData";
 import Greetings from "../../Components/Greetings/Greetings";
 import AverageScore from "../../Components/AverageScore/AverageScore";
 import DailySessions from "../../Components/DailySessions/DailySessions";
 import TypeActivities from "../../Components/TypeActivities/TypeActivities";
+import Error from "../Error/Error";
 import AverageSessions from "../../Components/AverageSessions/AverageSessions";
 
 function MyComponent() {
@@ -26,10 +28,15 @@ function MyComponent() {
 }
 
 export default function Profile() { 
-  return (
-    <>
-      <Header />
+  const { userId } = useParams();
+  return userId == 12 || userId == 18 ? (
+      <>
+    <Header />
       <MyComponent />
+      </>
+    ) : (
+      <>
+      <Error/>
     </>
   );
 }
