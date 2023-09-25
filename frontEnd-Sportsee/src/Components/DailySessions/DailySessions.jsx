@@ -20,7 +20,6 @@ export default function DailySessions() {
       setLoading(false)};
     fetchData()
   }, [userId]); 
-  console.log(error);
   if (loading) return <div>Loading...</div>;
   if (error) return (
     <Error />

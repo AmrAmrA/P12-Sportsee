@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default async function AverageSessions(Id) {
-    const isDataMocked = true;
+    const isDataMocked = false;
     const endpoint = isDataMocked ? `../../src/Mock/AverageSessions.json` : `http://localhost:3000/user/${Id}/average-sessions`;
     try {
       const response = await fetch(endpoint);
