@@ -46,6 +46,7 @@ export default function AverageSessions() {
   if (error) return (
     <Error />
   )
+  console.log(data);
   // I replace the array of days of the week with another array of their abbreviations
   const copyArray = [...data.data.sessions];
   const daysWithLetters = ["L", "M", " M ", "J", "V", "S", "D"];

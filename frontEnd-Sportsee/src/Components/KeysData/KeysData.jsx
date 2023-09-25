@@ -46,7 +46,7 @@ let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
         <div className={styles.keyDataBox__calories}>
           <img className={styles.keyDataBox__calories__icon} src={caloriesIcon} alt="calories icon"/>
           <div className={styles.keyDataBox__calories__text}>
-            <p className={styles.keyDataBox__calories__text__value}><span>{calorieCount}</span>kCal</p>
+            <p className={styles.keyDataBox__calories__text__value}><span>{calorieCount}</span> Kcal</p>
             <p className={styles.keyDataBox__calories__text__title}>Calories</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
         <div className={styles.keyDataBox__calories}>
           <img className={styles.keyDataBox__calories__icon} src={proteinesIcon} alt="proteins icon"/>
           <div className={styles.keyDataBox__calories__text}>
-            <p className={styles.keyDataBox__calories__text__value}><span>{proteinCount}</span>g</p>
+            <p className={styles.keyDataBox__calories__text__value}><span>{proteinCount}</span> g</p>
             <p className={styles.keyDataBox__calories__text__title}>Proteines</p>
           </div>
         </div>
@@ -64,7 +64,7 @@ let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
         <div className={styles.keyDataBox__calories}>
           <img className={styles.keyDataBox__calories__icon} src={carbsIcon} alt="carbohydrates icon"/>
           <div className={styles.keyDataBox__calories__text}>
-            <p className={styles.keyDataBox__calories__text__value}><span>{carbohydrateCount}</span>g</p>
+            <p className={styles.keyDataBox__calories__text__value}><span>{carbohydrateCount}</span> g</p>
             <p className={styles.keyDataBox__calories__text__title}>Glucides</p>
           </div>
         </div>
@@ -73,7 +73,7 @@ let [calorieCount, proteinCount, carbohydrateCount, lipidCount] = myArray;
         <div className={styles.keyDataBox__calories}>
           <img className={styles.keyDataBox__calories__icon} src={lipidsIcon} alt="lipids icon"/>
           <div className={styles.keyDataBox__calories__text}>
-            <p className={styles.keyDataBox__calories__text__value}><span>{lipidCount}</span>g</p>
+            <p className={styles.keyDataBox__calories__text__value}><span>{lipidCount}</span> g</p>
             <p className={styles.keyDataBox__calories__text__title}>Lipides</p>
           </div>
         </div>

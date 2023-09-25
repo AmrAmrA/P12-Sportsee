@@ -17,12 +17,9 @@ export default async function CallsAPI (Id) {
         const FoundData = data.find(el => el.id === Number(Id))
         data = { data: FoundData}
       }
-
-
       return data;
     } catch (error) {
       console.error("Fetch error: ", error);
       throw error;
     }
-
-  }
+}
