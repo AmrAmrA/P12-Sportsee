@@ -15,7 +15,7 @@ export default function Greetings() {
         const result = await CallsApi(userId);
         setData(result);
       } catch (error) {
-        setError(error);
+        setError(true);
       }
       setLoading(false);
     };

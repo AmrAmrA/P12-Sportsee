@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,} from "react";
 import PropTypes from "prop-types";
+import Error from "../../Pages/Error/Error";
 import { useParams } from "react-router-dom";
 import CallAverageSessions from "../../Services/AverageSessionsAPI";
 import AveragesSessionsStyle from "./__AverageSessions.scss";
@@ -35,14 +36,16 @@ export default function AverageSessions() {
         const result = await CallAverageSessions(userId);
         setData(result);
       } catch (error) {
-        setError(error);
+        setError(true);
       }
       setLoading(false);
     };
     fetchData();
   }, [userId]);
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: </div>;
+  if (error) return (
+    <Error />
+  )
   // I replace the array of days of the week with another array of their abbreviations
   const copyArray = [...data.data.sessions];
   const daysWithLetters = ["L", "M", " M ", "J", "V", "S", "D"];

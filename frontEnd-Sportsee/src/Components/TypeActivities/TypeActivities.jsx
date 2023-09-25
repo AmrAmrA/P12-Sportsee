@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, redirect } from "react-router-dom";
+import Error from "../../Pages/Error/Error";
 import TypeActivitiesStyles from "./__TypesActivities.scss"
 import TypesActivitiesPerformances from "../../Services/ActivitiesPerformances";
 import {Radar,RadarChart,PolarGrid,PolarAngleAxis,PolarRadiusAxis} from "recharts";
@@ -27,7 +28,7 @@ export default function TypeActivities() {
     fetchData();
   }, [userId]);
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) {return redirect(Error)}
   let ArrayCopy = data.data.data;
   // I build a new array with indexes in French in order to 
   // substitue with a loop the kind of sports activities written in English 

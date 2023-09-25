@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import AverageScoreStyle from "./__AverageScore.scss";
 import CallsApi from "../../Services/CallsAPI";
 import {RadialBarChart,RadialBar} from "recharts";
+import ErrorPage from "../../Pages/Error/Error"
 
 export default function AverageScore() {
   const [data, setData] = useState({});
@@ -19,15 +20,16 @@ export default function AverageScore() {
         const result = await CallsApi(userId);
         setData(result);
       } catch (error) {
-        setError(error);
+        setError(true);
       }
       setLoading(false);
     };
     fetchData();
-  }, [userId]); // Ajouter userId à la liste de dépendances
+  }, [userId]); // Ajouter userId à la liste de dépendances               
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
+  if (error) return (
+    <ErrorPage/>
+  );
   let objectScore = [{
     // I have to use a ternary because inside our API DATA, some users have the key "score" and other ones have the key "todayScore"
    "score": `${data.data.todayScore ? data.data.todayScore : data.data.score}`, 

@@ -8,10 +8,13 @@ import DailySessions from "../../Components/DailySessions/DailySessions";
 import TypeActivities from "../../Components/TypeActivities/TypeActivities";
 import Error from "../Error/Error";
 import AverageSessions from "../../Components/AverageSessions/AverageSessions";
+import { ErrorBoundary } from "react-error-boundary";
 
 function MyComponent() {
+
   return (
-      <main className={styles.main__profile}><Greetings/>
+    <ErrorBoundary fallback={<Error/>}>
+            <main className={styles.main__profile}><Greetings/>
         <div className={styles.statsLayout}>
           <DailySessions/>
           <KeysData/>
@@ -24,6 +27,7 @@ function MyComponent() {
         </div>
    
       </main>
+    </ErrorBoundary>
   );
 }
 
@@ -35,8 +39,5 @@ export default function Profile() {
       <MyComponent />
       </>
     ) : (
-      <>
-      <Error/>
-    </>
-  );
+      <Error/>);
 }

@@ -1,0 +1,32 @@
+ [
+    {
+        "id": 12,
+        "userInfos": {
+            "firstName": "Tonton",
+            "lastName": "Radin",
+            "age": 31
+        },
+        "todayScore": 0.12,
+        "keyData": {
+            "calorieCount": 197,
+            "proteinCount": 175,
+            "carbohydrateCount": 280,
+            "lipidCount": 80
+        }
+    },
+    {
+        "id": 18,
+        "userInfos": {
+            "firstName": "Tata",
+            "lastName": "Radine",
+            "age": 34
+        },
+        "score": 0.3,
+        "keyData": {
+            "calorieCount": 2500,
+            "proteinCount": 90,
+            "carbohydrateCount": 150,
+            "lipidCount": 120
+        }
+    }
+]

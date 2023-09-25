@@ -1,46 +1,28 @@
 /* eslint-disable no-unused-vars */
-// import React, { useState, useEffect } from "react";
-
-// export default function CallsAPI(Id) {
-//   const endpoint = `http://localhost:3000/user/${Id}`;
-
-//   const [userData, setUserData] = useState({});
-
-//   useEffect(() => {
-//     fetch(endpoint)
-//       .then((res) => res.json())
-//       .then((res) => {
-//         setUserData(res);
-//       });
-//   }, [Id]);
-//   return { userData }
-// }
-
 import React from 'react'
 
 export default async function CallsAPI (Id) {
     const isDataMocked = false;
+    const endpoint = isDataMocked ? '../../src/Mock/KeysData.json' : `http://localhost:3000/user/${Id}`
 
-    if(isDataMocked){
-      // fait appel aux datas mockées, toujours en fonction de l'id bien évidemment
-      const endpoint = '../../public/FakeKeysData.json';
-      
-    } else {
-      // data de l'api*
-      const endpoint = `http://localhost:3000/user/${Id}`;
-  
-      try {
-        const response = await fetch(endpoint);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        if (!data) return null
-        return data;
-      } catch (error) {
-        console.error("Fetch error: ", error);
-        throw error;
+    try {
+      const response = await fetch(endpoint);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      let data = await response.json();
+      if (!data) return null
+
+      if(isDataMocked){
+        const FoundData = data.find(el => el.id === Number(Id))
+        data = { data: FoundData}
+      }
+
+
+      return data;
+    } catch (error) {
+      console.error("Fetch error: ", error);
+      throw error;
     }
 
   }

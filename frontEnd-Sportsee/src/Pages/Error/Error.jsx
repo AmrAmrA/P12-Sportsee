@@ -1,11 +1,9 @@
-import React from 'react'
 import ErrorStyles from './__Error.scss'
 import { Link } from "react-router-dom";
 
 export default function Error() {
   return (
-    <main>
-        
+    <main>   
     <div className="errorContainer">
       <h1 className="errorContainer__title">404</h1>
       <p className="errorContainer__subTitle">Page Error</p>
