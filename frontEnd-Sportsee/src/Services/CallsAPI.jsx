@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { isDataMocked } from '../config';
 
 export default async function CallsAPI (Id) {
-    const isDataMocked = false;
     const endpoint = isDataMocked ? '../../src/Mock/KeysData.json' : `http://localhost:3000/user/${Id}`
 
     try {

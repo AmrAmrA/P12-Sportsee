@@ -1,7 +1,6 @@
 import React from 'react'
-
+import { isDataMocked } from '../config';
 export default async function ActivitiesPerformances(Id) {
-    const isDataMocked = false;
     const endpoint = isDataMocked ? `../../src/Mock/ActivitiesPerformances.json`: `http://localhost:3000/user/${Id}/performance`;
   
     try {

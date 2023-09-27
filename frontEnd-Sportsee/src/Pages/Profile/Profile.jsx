@@ -14,7 +14,7 @@ function MyComponent() {
 
   return (
     <ErrorBoundary fallback={<Error/>}>
-            <main className={styles.main__profile}><Greetings/>
+        <main className={styles.main__profile}><Greetings/>
         <div className={styles.statsLayout}>
           <DailySessions/>
           <KeysData/>
