@@ -1,14 +1,12 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { mapDaysToLetters, extractSessionDurations } from "./utils";
 import {LineChart,Cell,XAxis,Line,CartesianGrid,Tooltip,Legend,Rectangle,ResponsiveContainer} from "recharts";
 export default function AverageSessionsChart({ sessions }) {
   const processedSessions = mapDaysToLetters(sessions);
   const sessionsDuration = extractSessionDurations(sessions)
-console.log(processedSessions);
   const getIntroOfPage = (label) => {
     const index = sessionsDuration[label];
-    console.log(sessionsDuration);
+    console.log(processedSessions);
     return index !== undefined ? `${index}` : "";
  };
   // The custom Tooltip with my own style and data who appears when we hoover the Red LineChart
@@ -23,7 +21,7 @@ console.log(processedSessions);
     return (<Rectangle fill="black" opacity={0.3} x={points[1].x - 20} width={540} height={177}/>)};
 
   CustomizedCursor.propTypes = { points: PropTypes.array };
-  CustomTooltip.propTypes = { label: PropTypes.number };
+  CustomTooltip.propTypes = { label: PropTypes.string };
   AverageSessionsChart.propTypes = { sessions: PropTypes.array };
   return (
     <div className="Line__charts">

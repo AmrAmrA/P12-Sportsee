@@ -3,7 +3,7 @@ import Error from "../../Pages/Error/Error";
 import { useParams } from "react-router-dom";
 import { useActivityData } from "./useActivityData";
 import AverageSessionsChart from "./AverageSessionsChart";
-import AveragesSessionsStyle from "./__AverageSessions.scss"; // Assurez-vous que vous utilisez ce style quelque part si nécessaire.
+import AveragesSessionsStyle from "./__AverageSessions.scss";
 
 export default function AverageSessions() {
   const { userId } = useParams();
