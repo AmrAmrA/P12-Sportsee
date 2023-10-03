@@ -11,33 +11,29 @@ import AverageSessions from "../../Components/AverageSessions/AverageSessions";
 import { ErrorBoundary } from "react-error-boundary";
 
 function MyComponent() {
-
   return (
-    <ErrorBoundary fallback={<Error/>}>
-        <main className={styles.main__profile}><Greetings/>
+    <ErrorBoundary fallback={<Error />}>
+      <main className={styles.main__profile}>
+        <Greetings />
         <div className={styles.statsLayout}>
-          <DailySessions/>
-          <KeysData/>
+          <DailySessions />
+          <KeysData />
         </div>
-        <div className={styles.wraper__stats}>  
-
-        <AverageSessions/>
-          <TypeActivities/>
-          <AverageScore/>
+        <div className={styles.wraper__stats}>
+          <AverageSessions />
+          <TypeActivities />
+          <AverageScore />
         </div>
-   
       </main>
     </ErrorBoundary>
   );
 }
 
-export default function Profile() { 
-  const { userId } = useParams();
-  return userId == 12 || userId == 18 ? (
-      <>
-    <Header />
+export default function Profile() {
+  return (
+    <>
+      <Header />
       <MyComponent />
-      </>
-    ) : (
-      <Error/>);
+    </>
+  );
 }

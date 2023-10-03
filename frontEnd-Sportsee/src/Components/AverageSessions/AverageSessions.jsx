@@ -1,4 +1,4 @@
-import React, { useState, useEffect,} from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Error from "../../Pages/Error/Error";
 import { useParams } from "react-router-dom";
@@ -13,14 +13,9 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Rectangle, 
+  Rectangle,
   ResponsiveContainer,
 } from "recharts";
-
-
-
-
-
 
 export default function AverageSessions() {
   const [data, setData] = useState({});
@@ -43,9 +38,7 @@ export default function AverageSessions() {
     fetchData();
   }, [userId]);
   if (loading) return <div>Loading...</div>;
-  if (error) return (
-    <Error />
-  )
+  if (error) return <Error />;
   // I replace the array of days of the week with another array of their abbreviations
   const copyArray = [...data.data.sessions];
   const daysWithLetters = ["L", "M", " M ", "J", "V", "S", "D"];
@@ -59,13 +52,13 @@ export default function AverageSessions() {
   }
 
   const labelToIndexMap = {
-    "L": 0,
-    "M": 1,
+    L: 0,
+    M: 1,
     " M ": 2,
-    "J": 3,
-    "V": 4,
-    "S": 5,
-    "D": 6,
+    J: 3,
+    V: 4,
+    S: 5,
+    D: 6,
   };
   // A function with a ternary condition
   // If while i hoover my index exists, return me the sessions length, Else don't return anything
@@ -77,9 +70,9 @@ export default function AverageSessions() {
   const CustomTooltip = ({ label }) => {
     if (label) {
       return (
-          <div className="custom__tooltip__char">
-            <p className="intro__">{getIntroOfPage(label)} min</p>
-          </div>
+        <div className="custom__tooltip__char">
+          <p className="intro__">{getIntroOfPage(label)} min</p>
+        </div>
       );
     }
 
@@ -89,10 +82,18 @@ export default function AverageSessions() {
   CustomTooltip.propTypes = {
     label: PropTypes.string,
   };
-
- const  CustomizedCursor = ({points}) => {
-		return <Rectangle fill="black" opacity={0.3} x={points[1].x - 20 } width={540} height={177} />;}
-  CustomizedCursor.propTypes = {points : PropTypes.array, };
+  const CustomizedCursor = ({ points }) => {
+    return (
+      <Rectangle
+        fill="black"
+        opacity={0.3}
+        x={points[1].x - 20}
+        width={540}
+        height={177}
+      />
+    );
+  };
+  CustomizedCursor.propTypes = { points: PropTypes.array };
 
   return (
     <div className="Line__charts">
@@ -118,7 +119,7 @@ export default function AverageSessions() {
             opacity="0.7"
           />
           <YAxis dataKey="sessionLength" width={0} tickCount={30} />
-          <Tooltip content={<CustomTooltip />} cursor={<CustomizedCursor />}  />
+          <Tooltip content={<CustomTooltip />} cursor={<CustomizedCursor />} />
           <Legend iconSize={0} />
           <Line
             type="monotone"
