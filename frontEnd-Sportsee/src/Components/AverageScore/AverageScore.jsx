@@ -37,7 +37,6 @@ export default function AverageScore() {
     },
   ];
   let scoreFormatted = objectScore[0].score;
-  console.log(objectScore);
   return (
     <>
       <div className="centralCircle">

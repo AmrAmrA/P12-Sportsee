@@ -1,33 +1,33 @@
 .charts {
-    grid-column: 1/5;
-    grid-row: 1/4;
-    background-color: #FBFBFB;
-    padding: 16px 0px;
-    height: 280px;
-    position: relative;
+  grid-column: 1/5;
+  grid-row: 1/4;
+  background-color: #fbfbfb;
+  padding: 16px 0px;
+  height: 280px;
+  position: relative;
 }
 
 .recharts-legend-item-text {
-    color: #0033ff; 
+  color: #0033ff;
 }
 .custom-tooltip__bar {
-    background-color: red;
-    color: #ffff;
-    height: 110px;
-    width: 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 30px ;
-    font-family: 'Roboto', 'sans-serif';
-    font-weight: 500;
+  background-color: red;
+  color: #ffff;
+  height: 110px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 30px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 500;
 }
 .DailyActivity {
-    position: absolute;
-    top: 20px;
-    margin-left: 40px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 15px;
+  position: absolute;
+  top: 20px;
+  margin-left: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
 }
