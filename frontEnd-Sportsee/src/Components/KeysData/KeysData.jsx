@@ -3,13 +3,11 @@ import useKeysDataApi from "./useKeysDataApi";
 import styles from "./__KeysData.module.scss";
 import fetchUserKeysData from "../../Services/CallsAPI";
 import { keysDataConfig } from "./KeysDataConfig";
-
 export default function KeysData() {
   const { userId } = useParams();
   const {data, loading} = useKeysDataApi(userId, fetchUserKeysData)
   if (loading) return <div>Loading...</div>;
   const configArray = keysDataConfig(data);
-
   return (
     <>
       {configArray.map(({ value, unit, title, icon, style }) => (

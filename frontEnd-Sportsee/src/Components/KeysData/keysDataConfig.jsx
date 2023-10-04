@@ -7,7 +7,7 @@ import styles from "./__KeysData.module.scss";
 export const keysDataConfig = (data) => {
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = data.data.keyData;
 
-  const configArray = [
+  return [
     {
       value: calorieCount,
       unit: "Kcal",
@@ -37,6 +37,4 @@ export const keysDataConfig = (data) => {
       style: styles.lipidsBox,
     },
   ];
-
-  return configArray;
 };
