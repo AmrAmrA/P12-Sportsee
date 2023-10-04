@@ -1,5 +1,4 @@
 import styles from "./__Profile.module.scss";
-import { useParams } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import KeysData from "../../Components/KeysData/KeysData";
 import Greetings from "../../Components/Greetings/Greetings";

@@ -1,8 +1,6 @@
-import React from 'react'
 import { isDataMocked } from '../config';
 export default async function ActivitiesPerformances(Id) {
     const endpoint = isDataMocked ? `../../src/Mock/ActivitiesPerformances.json`: `http://localhost:3000/user/${Id}/performance`;
-  
     try {
       const response = await fetch(endpoint);
       if (!response.ok) {

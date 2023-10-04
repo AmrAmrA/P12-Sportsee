@@ -1,6 +1,4 @@
-import React from 'react'
 import { isDataMocked } from '../config';
-
 export default async function AverageSessions(Id) {
     const endpoint = isDataMocked ? `../../src/Mock/AverageSessions.json` : `http://localhost:3000/user/${Id}/average-sessions`;
     try {

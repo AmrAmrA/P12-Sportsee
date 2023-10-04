@@ -1,6 +1,4 @@
-import React from 'react'
 import { isDataMocked } from '../config';
-
 export default async function ActivityAPI(Id) {
     const endpoint = isDataMocked ? `../../src/Mock/DailySessions.json` : `http://localhost:3000/user/${Id}/activity`;
     try {

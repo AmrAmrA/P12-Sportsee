@@ -1,4 +1,4 @@
-import ErrorStyles from "./__Error.scss";
+import "./__Error.scss";
 import { Link } from "react-router-dom";
 
 export default function Error() {
