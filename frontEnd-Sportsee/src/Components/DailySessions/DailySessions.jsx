@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import DailySessionsStyle from "./__DailySessions.scss";
+import "./__DailySessions.scss";
 import Error from "../../Pages/Error/Error";
 import ActivityAPI from "../../Services/ActivityAPI";
 import PropTypes from "prop-types";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend,ResponsiveContainer} from "recharts";
 export default function DailySessions() {
   const [data, setData] = useState(undefined);
   const [loading, setLoading] = useState(true);

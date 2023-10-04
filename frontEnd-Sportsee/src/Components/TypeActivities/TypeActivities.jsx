@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, redirect } from "react-router-dom";
 import Error from "../../Pages/Error/Error";
-import TypeActivitiesStyles from "./__TypesActivities.scss"
+import "./__TypesActivities.scss"
 import TypesActivitiesPerformances from "../../Services/ActivitiesPerformances";
 import {Radar,RadarChart,PolarGrid,PolarAngleAxis,PolarRadiusAxis} from "recharts";
   
