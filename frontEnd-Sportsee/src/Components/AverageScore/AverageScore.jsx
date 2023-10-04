@@ -8,9 +8,8 @@ import transformScoreData from "./transformScoreData";
 
 export default function AverageScore() {
   const { userId } = useParams();
-  const { data, loading, error } = useAverageScoreData(userId, FetchUserScore);
+  const { data, loading} = useAverageScoreData(userId, FetchUserScore);
   if (loading) return <div>Loading...</div>;
-  if (error) return <ErrorPage />;
   const objectScore = transformScoreData(data);
   if (!objectScore || objectScore.length === 0) return <ErrorPage message="Invalid data format" />;
   const scoreFormatted = objectScore[0].score;

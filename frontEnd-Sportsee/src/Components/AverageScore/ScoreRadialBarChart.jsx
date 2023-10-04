@@ -1,4 +1,4 @@
-import { RadialBarChart, RadialBar} from "recharts";
+import { RadialBarChart, RadialBar } from "recharts";
 import PropTypes from "prop-types";
 const ScoreRadialChart = ({ scoreData }) => {
   return (
@@ -8,7 +8,7 @@ const ScoreRadialChart = ({ scoreData }) => {
       cx={100}
       cy={130}
       innerRadius={80}
-      cornerRadius ={80}
+      cornerRadius={80}
       outerRadius={80}
       startAngle={80}
       endAngle={150}
