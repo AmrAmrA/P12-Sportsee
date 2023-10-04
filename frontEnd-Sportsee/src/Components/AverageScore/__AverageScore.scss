@@ -7,7 +7,7 @@
 }
 .score__absolute {
   position: absolute;
-  left: 450px;
+  left: 610px;
   z-index: 3;
   font-weight: 900;
   font-size: 17px;
@@ -39,11 +39,4 @@
   color: #74798c;
   font-size: 19px;
   font-weight: 900;
-}
-.recharts-radial-bar-label {
-  display: none;
-}
-.recharts-area {
-  stroke-linejoin: round;
-  stroke-width: 7px;
 }

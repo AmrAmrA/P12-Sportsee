@@ -1,7 +1,6 @@
-import { RadialBarChart, RadialBar } from "recharts";
+import { RadialBarChart, RadialBar} from "recharts";
 import PropTypes from "prop-types";
 const ScoreRadialChart = ({ scoreData }) => {
-  ScoreRadialChart.propTypes = { scoreData: PropTypes.array };
   return (
     <RadialBarChart
       width={205}
@@ -9,6 +8,7 @@ const ScoreRadialChart = ({ scoreData }) => {
       cx={100}
       cy={130}
       innerRadius={80}
+      cornerRadius ={80}
       outerRadius={80}
       startAngle={80}
       endAngle={150}
@@ -19,15 +19,16 @@ const ScoreRadialChart = ({ scoreData }) => {
     >
       <RadialBar
         minAngle={15}
-        label={{ position: "insideStart", fill: "green" }}
+        label={{ position: "insideStart", fill: "red" }}
         width={0}
         height={0}
         clockWise
         dataKey="pv"
-        radius={[20, 20, 20, 20]}
+        cornerRadius={50}
       />
     </RadialBarChart>
   );
 };
 
+ScoreRadialChart.propTypes = { scoreData: PropTypes.array };
 export default ScoreRadialChart;
