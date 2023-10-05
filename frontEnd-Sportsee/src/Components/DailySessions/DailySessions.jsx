@@ -9,7 +9,6 @@ export default function DailySessions() {
   const { data, loading } = useDailyData(userId, FetchActivityData);
   if (loading) return <div>Loading...</div>;
   const dataArrayApi = formatActivityData(data.data);
-  console.log(dataArrayApi);
   return (
     <div className="charts">
       <p className="DailyActivity">Activité quotidenne</p>
