@@ -1,7 +1,7 @@
 import styles from "./__vertical.module.scss";
 import { useVerticalList } from "./useVerticalList";
 export default function VerticalList() {
-  const configVerticalArray = useVerticalList();
+const configVerticalArray = useVerticalList();
   return (
     <nav className={styles.navigationVertical}>
       <ul className={styles.navigationVertical__list}>

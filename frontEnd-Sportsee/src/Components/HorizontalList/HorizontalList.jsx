@@ -1,13 +1,8 @@
 import logo from "../assets/logoSportSee.svg";
 import styles from "./__horizontal.module.scss";
+import useHorizontalData from "./useHorizontalData";
 export default function HorizontalList() {
-  const configListArray = [
-    {type: "logo",src: logo,alt: "Sportsee logo"},
-    { type: "text", value: "Accueil" },
-    { type: "text", value: "Profil" },
-    { type: "text", value: "Réglage" },
-    { type: "text", value: "Communauté" },
-  ];
+  const configListArray = useHorizontalData(); 
   return (
     <nav>
       <ul className={styles.navigation__list}>
