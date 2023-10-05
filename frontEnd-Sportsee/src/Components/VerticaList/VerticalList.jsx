@@ -1,29 +1,7 @@
 import styles from "./__vertical.module.scss";
-import meditation from "../assets/meditation.svg";
-import swimming from "../assets/swimming.svg";
-import cycling from "../assets/cycling.svg";
-import bodyBuilding from "../assets/bodyBuilding.svg";
-
+import { useVerticalList } from "./useVerticalList";
 export default function VerticalList() {
-  const configVerticalArray = [
-    {
-      src: meditation,
-      alt: "A character meditating",
-    },
-    {
-      src: swimming,
-      alt: "A character swimming",
-    },
-    {
-      src: cycling,
-      alt: "A character Cycling",
-    },
-    {
-      src: bodyBuilding,
-      alt: "A red dumbell",
-    },
-  ];
-
+  const configVerticalArray = useVerticalList();
   return (
     <nav className={styles.navigationVertical}>
       <ul className={styles.navigationVertical__list}>
@@ -34,7 +12,7 @@ export default function VerticalList() {
         ))}
       </ul>
       <p className={styles.navigationVertical__list__text}>
-      Copyright, SportSee {new Date().getFullYear()}
+        Copyright, SportSee {new Date().getFullYear()}
       </p>
     </nav>
   );
