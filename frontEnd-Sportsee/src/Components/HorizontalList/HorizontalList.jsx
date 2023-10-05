@@ -1,4 +1,3 @@
-import logo from "../assets/logoSportSee.svg";
 import styles from "./__horizontal.module.scss";
 import useHorizontalData from "./useHorizontalData";
 export default function HorizontalList() {
