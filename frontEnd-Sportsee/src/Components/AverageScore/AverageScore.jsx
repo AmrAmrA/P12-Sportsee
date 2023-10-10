@@ -14,13 +14,13 @@ export default function AverageScore() {
   if (!objectScore || objectScore.length === 0) return <ErrorPage message="Invalid data format" />;
   const scoreFormatted = objectScore[0].score;
   return (
-    <>
+    <div className="ScoreGraphicWrapper">
       <div className="centralCircle">
         <p className="scoreInsideCirlce">{scoreFormatted * 100}%</p>
         <p className="objectifInsideCircle">de votre <br /> objectif</p>
       </div>
       <p className="score__absolute">Score</p>
       <ScoreRadialChart scoreData={objectScore} />
-    </>
+    </div>
   );
 }

@@ -7,12 +7,16 @@
 }
 .score__absolute {
   position: absolute;
-  left: 610px;
+  left: 20px;
   z-index: 3;
   font-weight: 900;
   font-size: 17px;
   font-family: "Roboto", sans-serif;
   margin-top: 18px;
+}
+
+.ScoreGraphicWrapper {
+  position: relative;
 }
 
 .centralCircle {
@@ -21,7 +25,7 @@
   height: 150px;
   border-radius: 50%;
   position: absolute;
-  left: 623px;
+  left: 23px;
   margin-top: 55px;
   z-index: 3;
 }
