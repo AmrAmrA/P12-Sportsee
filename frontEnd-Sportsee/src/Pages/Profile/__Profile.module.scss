@@ -1,12 +1,19 @@
 .main__profile {
-    margin: 0 20px 0px 150px;
+    margin: 0 20px 0px 0px;
+    display: flex;
+    height: 650px;
 }
+
 .statsLayout {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+}
+.content__wrapper {
+    width: 93%;
+    margin-left: 10px;
 }
 .wraper__stats {
     margin-top: -262px;

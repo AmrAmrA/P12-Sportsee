@@ -6,6 +6,6 @@ import VerticalList from "../VerticaList/VerticalList";
 
 export default function Header() {
   return (
-    <><HorizontalList/><VerticalList/></>
+    <><HorizontalList/></>
   );
 }
